@@ -1,0 +1,27 @@
+Request method:	POST
+<Request URI:	http://dummy.restapiexample.com/api/v1/create
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*a
+2				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "name": "Dana",
+    "salary": "123",
+    "age": "23"
+}
+{
+    "status": "success",
+    "data": {
+        "name": "Dana",
+        "salary": "123",
+        "age": "23",
+        "id": 38
+    }
+}
+200
