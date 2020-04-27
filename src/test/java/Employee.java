@@ -1,3 +1,4 @@
+import demo.EmployeeRequest;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.junit.Assert;
@@ -22,11 +23,16 @@ public class Employee {
 
     @Test
     public void createEmployee(){
-        String requestBody = "{\n" +
-                "  \"name\": \"Dana\",\n" +
-                "  \"salary\": \"123\",\n" +
-                "  \"age\": \"23\"\n" +
-                "}";
+//        String requestBody = "{\n" +
+//                "  \"name\": \"Dana\",\n" +
+//                "  \"salary\": \"123\",\n" +
+//                "  \"age\": \"23\"\n" +
+//                "}";
+
+        EmployeeRequest employeeRequest = new EmployeeRequest();
+        employeeRequest.setName("Aguunng");
+        employeeRequest.setAge("20");
+        employeeRequest.setSalary("5000");
 
         Response response = RestAssured
                 .given()
@@ -35,8 +41,8 @@ public class Employee {
                 .log()
                 .all()
                 .header("Content-type", "application/json")
-                .header("Accept", "*/*a")
-                .body(requestBody)
+                .header("Accept", "*/*")
+//                .body(requestBody)
                 .post("/v1/create");
 
         response.getBody().prettyPrint();
